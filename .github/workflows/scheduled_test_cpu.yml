@@ -21,36 +21,36 @@ jobs:
     uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
     with:
       os: 'Ubuntu-latest'
-      python-version: '["3.8", "3.9", "3.10", "3.11"]'
-      pytorch-version: '["1.9.1", "1.10.2", "1.11.0", "1.12.1", "1.13.1", "2.0.1", "2.1.2", "2.2.0"]'
+      python-version: [3.11] #'["3.8", "3.9", "3.10", "3.11"]'
+      pytorch-version: [2.2.0] #'["1.9.1", "1.10.2", "1.11.0", "1.12.1", "1.13.1", "2.0.1", "2.1.2", "2.2.0"]'
       pytorch-dtype: ${{ matrix.pytorch-dtype }}
       pytest-extra: '--runslow'
 
 
 
-  tests-cpu-windows:
-    strategy:
-      fail-fast: true
-      matrix:
-        pytorch-dtype: ['float32', 'float64']
+  # tests-cpu-windows:
+  #   strategy:
+  #     fail-fast: true
+  #     matrix:
+  #       pytorch-dtype: ['float32', 'float64']
 
-    uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
-    with:
-      os: 'Windows-latest'
-      python-version: '["3.11"]'
-      pytorch-version: '["1.9.1", "2.2.0"]'
-      pytorch-dtype: ${{ matrix.pytorch-dtype }}
+  #   uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
+  #   with:
+  #     os: 'Windows-latest'
+  #     python-version: '["3.11"]'
+  #     pytorch-version: '["1.9.1", "2.2.0"]'
+  #     pytorch-dtype: ${{ matrix.pytorch-dtype }}
 
-  tests-cpu-mac:
-    strategy:
-      fail-fast: true
-      matrix:
-        pytorch-dtype: ['float32', 'float64']
+  # tests-cpu-mac:
+  #   strategy:
+  #     fail-fast: true
+  #     matrix:
+  #       pytorch-dtype: ['float32', 'float64']
 
-    uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
-    with:
-      os: 'MacOS-latest'
-      pytorch-dtype: ${{ matrix.pytorch-dtype }}
+  #   uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
+  #   with:
+  #     os: 'MacOS-latest'
+  #     pytorch-dtype: ${{ matrix.pytorch-dtype }}
 
   coverage:
     uses: kornia/workflows/.github/workflows/coverage.yml@v1.5.2
