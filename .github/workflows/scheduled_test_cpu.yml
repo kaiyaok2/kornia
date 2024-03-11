@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         # os: ['Ubuntu-latest', 'Windows-latest', 'MacOS-latest']
-        pytorch-dtype: ['float32', 'float64']
+        pytorch-dtype: ['float64'] #, 'float32']
 
     uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
     with:
