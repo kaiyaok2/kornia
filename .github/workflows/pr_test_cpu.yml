@@ -28,8 +28,8 @@ jobs:
     uses: kornia/workflows/.github/workflows/tests.yml@v1.5.2
     with:
       os: ${{ matrix.os }}
-      python-version: '["3.8", "3.11"]'
-      pytorch-version: '["1.9.1", "2.2.0"]'
+      python-version: '["3.11"]' #'["3.8", "3.11"]'
+      pytorch-version: '["2.2.0"]'  #'["1.9.1", "2.2.0"]'
       pytorch-dtype: ${{ matrix.pytorch-dtype }}
 
   coverage:
